@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_todolist/src/models/task.dart';
-import 'package:flutter_my_todolist/src/providers/todos_model.dart';
+import 'package:flutter_my_todolist/src/providers/task_list_provider.dart';
 import 'package:provider/provider.dart';
 
 class AddNewTaskScreen extends StatefulWidget {
@@ -30,7 +30,7 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
         completed: completed,
       );
 
-      Provider.of<TodosModel>(context, listen: false).addTodo(todo);
+      Provider.of<TaskListProvider>(context, listen: false).addTodo(todo);
       Navigator.pop(
           context); // Add completed, Back to HomeScreen display All Task
     }

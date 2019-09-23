@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text('To do list'),
+        title: Text('To Do List'),
         bottom: TabBar(
           controller: controller,
           tabs: <Widget>[

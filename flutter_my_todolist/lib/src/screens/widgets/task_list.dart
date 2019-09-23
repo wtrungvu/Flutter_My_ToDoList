@@ -3,9 +3,9 @@ import 'package:flutter_my_todolist/src/models/task.dart';
 import 'task_list_item.dart';
 
 class TaskList extends StatelessWidget {
-  final List<Task> tasks;
+  final List<Task> taskList;
 
-  TaskList({@required this.tasks});
+  TaskList({@required this.taskList});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,6 @@ class TaskList extends StatelessWidget {
   }
 
   List<Widget> getChildrenTasks() {
-    return tasks.map((todo) => TaskListItem(task: todo)).toList();
+    return taskList.map((taskItem) => TaskListItem(task: taskItem)).toList();
   }
 }

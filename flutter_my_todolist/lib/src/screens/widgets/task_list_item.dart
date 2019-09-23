@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_todolist/src/models/task.dart';
-import 'package:flutter_my_todolist/src/providers/todos_model.dart';
+import 'package:flutter_my_todolist/src/providers/task_list_provider.dart';
 import 'package:provider/provider.dart';
 
 class TaskListItem extends StatelessWidget {
@@ -15,7 +15,8 @@ class TaskListItem extends StatelessWidget {
         activeColor: Colors.green,
         value: task.completed,
         onChanged: (bool checked) {
-          Provider.of<TodosModel>(context, listen: false).toggleTodo(task);
+          Provider.of<TaskListProvider>(context, listen: false)
+              .toggleTodo(task);
         },
       ),
       title: Text(task.title),
@@ -25,7 +26,8 @@ class TaskListItem extends StatelessWidget {
           color: Colors.red,
         ),
         onPressed: () {
-          Provider.of<TodosModel>(context, listen: false).deleteTodo(task);
+          Provider.of<TaskListProvider>(context, listen: false)
+              .deleteTodo(task);
         },
       ),
     );

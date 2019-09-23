@@ -6,6 +6,7 @@ class Task {
 
   Task({@required this.title, this.completed = false});
 
+  // Checbox switch complete to incompleted or opposite
   toggleCompleted() {
     completed = !completed;
   }
